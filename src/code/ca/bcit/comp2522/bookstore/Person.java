@@ -15,13 +15,21 @@ public class Person implements Comparable,
                   final Name name)
     {
         validateDateOfBirth(dateOfBirth);
-        validateDateOfDeath(dateOfDeath);
-        validateName(name);
 
         this.dateOfBirth = dateOfBirth;
         this.dateOfDeath = dateOfDeath;
         this.name        = name;
     }
+
+    public Person(final Date dateOfBirth,
+                  final Name name)
+    {
+        this(dateOfBirth,
+             null,
+             name);
+    }
+
+
 
     @Override
     public void display()
@@ -41,13 +49,12 @@ public class Person implements Comparable,
         return 0;
     }
 
-    private static void validateDate(final Date date)
+    private static void validateDateOfBirth(final Date dateOfBirth)
     {
-
+        if(dateOfBirth == null)
+        {
+            throw new IllegalArgumentException("Date of birth cannot be null,");
+        }
     }
 
-    private static void validateName(final Name name)
-    {
-
-    }
 }
