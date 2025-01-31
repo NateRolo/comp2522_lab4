@@ -18,7 +18,7 @@ package ca.bcit.comp2522.bookstore;
  * @author Nathan Oloresisimo
  * @version 1.0
  */
-public class Name
+public class Name implements Printable
 {
     private static final int MAX_NAME_LENGTH = 50;
     private static final int FIRST_LETTER = 0;
@@ -132,10 +132,10 @@ public class Name
 
         builder = new StringBuilder();
         builder.append(firstNameInitial)
-                .append(firstNameBody)
-                .append(" ")
-                .append(lastNameInitial)
-                .append(lastNameBody);
+               .append(firstNameBody)
+               .append(" ")
+               .append(lastNameInitial)
+               .append(lastNameBody);
         fullNameFormatted = builder.toString();
 
         return fullNameFormatted;
@@ -165,6 +165,12 @@ public class Name
 
         reversedFullName = builder.toString();
         return reversedFullName;
+    }
+
+    @Override
+    public void display()
+    {
+        System.out.println(this.getFullName());
     }
 
     /*
