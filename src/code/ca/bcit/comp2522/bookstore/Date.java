@@ -7,7 +7,6 @@ package ca.bcit.comp2522.bookstore;
  * <p>
  *      This class validates input for year, month, and day
  *      according to Gregorian calendar rules.
- *
  *      It provides methods to retrieve individual date components,
  *      format dates in various styles, and calculate the day of
  *      the week using modular arithmetic.
