@@ -1,6 +1,12 @@
 package ca.bcit.comp2522.bookstore;
 
-
+/**
+ * Represents a person with a name, birth date, and optional death date.
+ *
+ * @author Lucas L
+ * @author Nathan O
+ * @version 1.0 2025
+ */
 public class Person implements Comparable,
                                Printable,
                                Reversible
@@ -9,6 +15,13 @@ public class Person implements Comparable,
     private final Date dateOfDeath;
     private final Name name;
 
+    /**
+     * Constructs a Person with a birth date, death date, and name.
+     *
+     * @param dateOfBirth the birth date of the person
+     * @param dateOfDeath the death date of the person (can be null if still alive)
+     * @param name        the name of the person
+     */
     public Person(final Date dateOfBirth,
                   final Date dateOfDeath,
                   final Name name)
@@ -20,6 +33,12 @@ public class Person implements Comparable,
         this.name        = name;
     }
 
+    /**
+     * Constructs a Person with a birth date and name, assuming they are alive.
+     *
+     * @param dateOfBirth the birth date of the person
+     * @param name        the name of the person
+     */
     public Person(final Date dateOfBirth,
                   final Name name)
     {
