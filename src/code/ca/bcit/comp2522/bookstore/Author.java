@@ -1,6 +1,6 @@
 package ca.bcit.comp2522.bookstore;
 
-public class Author extends Person
+public class Author extends Person implements Printable
 {
     private static final int MAX_GENRE_NAME_LENGTH = 30;
 
@@ -15,12 +15,42 @@ public class Author extends Person
               dateOfDeath,
               name);
 
-        validateGenre(genre);
+        validateGenreName(genre);
 
         this.genre = genre;
     }
 
-    private static void validateGenre(final String genre)
+    public Author(final Date dateOfBirth,
+                  final Name name,
+                  final String genre)
+    {
+        this(dateOfBirth,
+              null,
+              name,
+              genre);
+    }
+
+    public final String getGenre()
+    {
+        return genre;
+    }
+
+    public final void setGenre(final String genre)
+    {
+        validateGenreName(genre);
+
+        this.genre = genre;
+    }
+
+    @Override
+    public void display()
+    {
+        super.display();
+
+        System.out.println("Genre: " + genre);
+    }
+
+    private static void validateGenreName(final String genre)
     {
         final boolean genreNameExceedsMaxLength;
         final int genreNameLength;
