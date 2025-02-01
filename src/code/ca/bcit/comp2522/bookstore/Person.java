@@ -76,8 +76,7 @@ public class Person implements Comparable,
                 .append(dateOfBirth)
                 .append("\n")
                 .append("Date of death: ")
-                .append(dateOfDeath)
-                .append("\n");
+                .append(dateOfDeath);
 
         details = builder.toString();
 
