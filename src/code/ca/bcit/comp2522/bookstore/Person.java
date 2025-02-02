@@ -1,8 +1,13 @@
 package ca.bcit.comp2522.bookstore;
 
-// Nate: Person, Date(implement {Printable}, author
-
-public class Person implements Comparable,
+/**
+ * Represents a person with a name, birth date, and optional death date.
+ *
+ * @author Lucas L
+ * @author Nathan O
+ * @version 1.0 2025
+ */
+public class Person implements Comparable<Object>,
                                Printable,
                                Reversible
 {
@@ -10,6 +15,13 @@ public class Person implements Comparable,
     private final Date dateOfDeath;
     private final Name name;
 
+    /**
+     * Constructs a Person with a birth date, death date, and name.
+     *
+     * @param dateOfBirth the birth date of the person
+     * @param dateOfDeath the death date of the person (can be null if still alive)
+     * @param name        the name of the person
+     */
     public Person(final Date dateOfBirth,
                   final Date dateOfDeath,
                   final Name name)
@@ -21,6 +33,12 @@ public class Person implements Comparable,
         this.name        = name;
     }
 
+    /**
+     * Constructs a Person with a birth date and name, assuming they are alive.
+     *
+     * @param dateOfBirth the birth date of the person
+     * @param name        the name of the person
+     */
     public Person(final Date dateOfBirth,
                   final Name name)
     {
@@ -29,21 +47,44 @@ public class Person implements Comparable,
              name);
     }
 
+    /**
+     * Retrieves the birth date of the person.
+     *
+     * @return the birth date
+     */
     public final Date getDateOfBirth()
     {
         return dateOfBirth;
     }
 
+    /**
+     * Retrieves the death date of the person.
+     *
+     * @return the death date, or null if the person is still alive
+     */
     public final Date getDateOfDeath()
     {
+        if(dateOfDeath == null)
+        {
+            System.out.println("Person is still alive.");
+        }
+
         return dateOfDeath;
     }
 
+    /**
+     * Retrieves the name of the person.
+     *
+     * @return the person's name
+     */
     public final Name getName()
     {
         return name;
     }
 
+    /**
+     * Displays the person's details, including their name, birth date, and death date if applicable.
+     */
     @Override
     public void display()
     {
@@ -76,14 +117,16 @@ public class Person implements Comparable,
                 .append(dateOfBirth)
                 .append("\n")
                 .append("Date of death: ")
-                .append(dateOfDeath)
-                .append("\n");
+                .append(dateOfDeath);
 
         details = builder.toString();
 
         System.out.println(details);
     }
 
+    /**
+     * Prints the person's name in reverse order.
+     */
     @Override
     public void backwards()
     {
@@ -101,6 +144,12 @@ public class Person implements Comparable,
         System.out.println(reversedName);
     }
 
+    /**
+     * Compares this person to another person based on birth year.
+     *
+     * @param o the object to compare to
+     * @return the difference in birth years between this person and the other
+     */
     @Override
     public int compareTo(final Object o)
     {
@@ -113,7 +162,7 @@ public class Person implements Comparable,
             throw new IllegalArgumentException("Cannot compare to null object.");
         }
 
-        objectIsNotAPerson = !(this.getClass().equals(o.getClass()));
+        objectIsNotAPerson = !(o instanceof Person);
 
         if(objectIsNotAPerson)
         {
@@ -127,6 +176,11 @@ public class Person implements Comparable,
         return ageDifference;
     }
 
+    /*
+     * Validates that the birth date is not null.
+     *
+     * @param dateOfBirth the birth date to validate
+     */
     private static void validateDateOfBirth(final Date dateOfBirth)
     {
         if(dateOfBirth == null)
