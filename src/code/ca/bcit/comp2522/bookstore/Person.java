@@ -178,6 +178,14 @@ public class Person implements Comparable<Object>,
         return ageDifference;
     }
 
+    /**
+     * Compares this Person object with the specified object for equality.
+     * Two Person objects are considered equal if their full names are the same.
+     *
+     * @param obj the object to be compared for equality with this Person.
+     * @return {@code true} if the specified object is equal to this Person;
+     *         {@code false} otherwise.
+     */
     @Override
     public boolean equals(Object obj)
     {
@@ -202,6 +210,12 @@ public class Person implements Comparable<Object>,
         return false;
     }
 
+    /**
+     * Returns a hash code value for this Person object.
+     * The hash code is computed based on the full name of the Person.
+     *
+     * @return a hash code value for this Person.
+     */
     @Override
     public int hashCode()
     {
