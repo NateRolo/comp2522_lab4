@@ -1,5 +1,7 @@
 package ca.bcit.comp2522.bookstore;
 
+import java.util.Objects;
+
 /**
  * Represents a person with a name, birth date, and optional death date.
  *
@@ -174,6 +176,40 @@ public class Person implements Comparable<Object>,
                         ((Person)o).getDateOfBirth().getYear();
 
         return ageDifference;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if(this == obj)
+        {
+            return true;
+        }
+
+        if(obj == null || !(obj instanceof Person))
+        {
+            return false;
+        }
+
+        final Person other;
+
+        other= (Person) obj;
+
+        if(name.getFullName().equals(other.getName().getFullName()))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        final int hash;
+
+        hash = Objects.hash(name.getFullName());
+
+        return hash;
     }
 
     /*
