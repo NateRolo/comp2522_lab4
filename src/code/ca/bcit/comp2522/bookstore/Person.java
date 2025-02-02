@@ -162,7 +162,7 @@ public class Person implements Comparable,
             throw new IllegalArgumentException("Cannot compare to null object.");
         }
 
-        objectIsNotAPerson = !(this.getClass().equals(o.getClass()));
+        objectIsNotAPerson = !(o instanceof Person);
 
         if(objectIsNotAPerson)
         {
@@ -176,7 +176,7 @@ public class Person implements Comparable,
         return ageDifference;
     }
 
-    /**
+    /*
      * Validates that the birth date is not null.
      *
      * @param dateOfBirth the birth date to validate
