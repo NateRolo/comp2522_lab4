@@ -6,13 +6,12 @@ public class Autobiography extends Biography
 
     public Autobiography(final String title,
                          final int yearPublished,
-                         final Author author,
-                         final Person subject) {
+                         final Author author) {
         //to be done once merged with person.
-        super(title, yearPublished, author, subject);
+        super(title, yearPublished, author, author);
     }
 
     public void display() {
-        //to be added once merged.
+        super.display();
     }
 }
