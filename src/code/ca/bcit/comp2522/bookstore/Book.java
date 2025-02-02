@@ -25,15 +25,15 @@ public class Book implements Comparable<Object>,
         this.author = author;
     }
 
-    public String getTitle() {
+    public final String getTitle() {
         return title;
     }
 
-    public int getYearPublished() {
+    public final int getYearPublished() {
         return yearPublished;
     }
 
-    public Author getAuthor() {
+    public final Author getAuthor() {
         return author;
     }
 
@@ -87,7 +87,7 @@ public class Book implements Comparable<Object>,
     {
         if(title == null || title.isBlank() || title.length() > MAXIMUM_TITLE_LENGTH)
         {
-            throw new IllegalArgumentException("Invalid title" + title);
+            throw new IllegalArgumentException("Invalid title " + title);
         }
     }
 
@@ -95,7 +95,7 @@ public class Book implements Comparable<Object>,
     {
         if(year < MINIMUM_YEAR || year > CURRENT_YEAR)
         {
-            throw new IllegalArgumentException("Invalid year" + year);
+            throw new IllegalArgumentException("Invalid year " + year);
         }
     }
 
