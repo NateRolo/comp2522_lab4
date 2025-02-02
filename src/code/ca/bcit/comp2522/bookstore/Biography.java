@@ -1,5 +1,7 @@
 package ca.bcit.comp2522.bookstore;
 
+import java.util.Objects;
+
 public class Biography extends Book
                         implements Printable
 {
@@ -17,23 +19,55 @@ public class Biography extends Book
         this.subject = subject;
     }
 
+    public final Person getSubject() {
+        return subject;
+    }
+
     @Override
     public void display() {
-        //to be added once merged.
+       final String str;
+
+       str ="subject: " +
+            subject.getName().getFullName();
+
+       super.display();
+       System.out.println(str);
+
+
     }
 
     @Override
     public boolean equals(final Object obj)
     {
-        //to be added once merged with person class
-        return true;
+        if (this == obj)
+        {
+            return true;
+        }
+        if(obj == null || !(obj instanceof Biography))
+        {
+            return false;
+        }
+
+        final Biography other;
+
+        other = (Biography) obj;
+
+        if(this.subject.equals(other.getSubject()))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     @Override
     public int hashCode()
     {
-        //to be added once equals is implemented.
-        return 0;
+        final int hash;
+
+        hash = subject.hashCode();
+
+        return hash;
     }
 
     private static void validateSubject(final Person subject)
