@@ -8,7 +8,8 @@ package ca.bcit.comp2522.bookstore;
  * @author  Nathan O
  * @version 1.0 2025
  */
-public class Author extends Person implements Printable
+public class Author extends Person
+                    implements Printable
 {
     private static final int MAX_GENRE_NAME_LENGTH = 30;
 
@@ -88,7 +89,7 @@ public class Author extends Person implements Printable
         System.out.println("Genre: " + genre);
     }
 
-    /**
+    /*
      * Validates that the genre name is not null, blank, and does not exceed
      * the maximum length.
      *
