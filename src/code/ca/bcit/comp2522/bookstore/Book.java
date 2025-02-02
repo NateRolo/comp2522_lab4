@@ -41,11 +41,13 @@ public class Book implements Comparable<Object>,
     public void display() {
         final String result;
 
-        result = this.title +
-                " published " +
+        result = "Title: " +
+                this.title +
+                "\n published: " +
                 this.yearPublished +
-                " by author ";
-        //need author class to display the result once merged.
+                "\n by author: " +
+                this.author.getName();
+
         System.out.println(result);
     }
 
