@@ -7,7 +7,7 @@ package ca.bcit.comp2522.bookstore;
  * @author Nathan O
  * @version 1.0 2025
  */
-public class Person implements Comparable,
+public class Person implements Comparable<Object>,
                                Printable,
                                Reversible
 {
