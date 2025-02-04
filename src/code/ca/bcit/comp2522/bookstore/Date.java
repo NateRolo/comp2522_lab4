@@ -26,7 +26,7 @@ package ca.bcit.comp2522.bookstore;
  */
 public class Date
 {
-    private static final int MINIMUM_YEAR = 1800;
+    private static final int MINIMUM_YEAR = 1700;
 
     static final int CURRENT_YEAR = 2025;
 
