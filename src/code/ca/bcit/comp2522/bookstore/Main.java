@@ -393,5 +393,64 @@ public class Main
         experimentsWithTruth.display();
         cagedBirdSings.display();
         malcolmXAutobiography.display();
+
+        // Book comparisons by publication year
+        System.out.println("\n=== Book Comparisons by Publication Year ===");
+
+        System.out.println("Comparing 1984 (1949) to Moby-Dick (1851):");
+        System.out.println("Result: " + nineteenEightyFour.compareTo(mobyDick));
+
+        System.out.println("\nComparing Pride and Prejudice (1813) to Great Gatsby (1925):");
+        System.out.println("Result: " + prideAndPrejudice.compareTo(greatGatsby));
+
+        System.out.println("\nChecking if To Kill a Mockingbird equals 1984:");
+        System.out.println("Result: " + toKillAMockingbird.equals(nineteenEightyFour));
+
+        // Author comparisons by birth date
+        System.out.println("\n=== Author Comparisons by Birth Date ===");
+
+        System.out.println("Comparing George Orwell to Jane Austen:");
+        System.out.println("Result: " + georgeOrwell.compareTo(janeAusten));
+
+        System.out.println("\nComparing Maya Angelou to Malcolm X:");
+        System.out.println("Result: " + mayaAngelou.compareTo(malcolmX));
+
+        System.out.println("\nChecking if Walter Isaacson equals Ron Chernow:");
+        System.out.println("Result: " + walterIsaacson.equals(ronChernow));
+
+        // Biography subject comparisons
+        System.out.println("\n=== Biography Subject Comparisons ===");
+
+        System.out.println("Comparing Einstein to Churchill:");
+        System.out.println("Result: " + einstein.compareTo(churchill));
+
+        System.out.println("\nComparing Hamilton to Robert Moses:");
+        System.out.println("Result: " + hamilton.compareTo(robertMoses));
+
+        System.out.println("\nChecking if Steve Jobs equals Einstein:");
+        System.out.println("Result: " + steveJobs.equals(einstein));
+
+        // Demonstrate Reversible interface
+        System.out.println("\n=== Reversible Interface Demonstrations ===");
+        
+        System.out.println("\nOriginal Book Title:");
+        nineteenEightyFour.display();
+        System.out.println("Reversed Book Title:");
+        nineteenEightyFour.backwards();
+
+        System.out.println("\nOriginal Author Name:");
+        georgeOrwell.display();
+        System.out.println("Reversed Author Name:");
+        georgeOrwell.backwards();
+
+        System.out.println("\nOriginal Biography:");
+        powerBroker.display();
+        System.out.println("Reversed Biography:");
+        powerBroker.backwards();
+
+        System.out.println("\nOriginal Autobiography:");
+        diaryOfAYoungGirl.display();
+        System.out.println("Reversed Autobiography:");
+        diaryOfAYoungGirl.backwards();
     }
 }
