@@ -80,9 +80,9 @@ public class Book implements Comparable<Object>,
 
         result = "Title: " +
                 this.title +
-                "\n Year Published: " +
+                "\nYear Published: " +
                 this.yearPublished +
-                "\n Author: " +
+                "\nAuthor: " +
                 this.author.getName().getFullName();
 
         System.out.println(result);
