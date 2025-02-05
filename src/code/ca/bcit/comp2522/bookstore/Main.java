@@ -1,7 +1,29 @@
 package ca.bcit.comp2522.bookstore;
 
+/**
+ * The {@code Main} class serves as the entry point for the {@code Bookstore} application.
+ * <p>
+ * It initializes and displays various books, biographies, and autobiographies,
+ * along with their respective authors and subjects.
+ * </p>
+ * <p>
+ * The program also demonstrates comparisons between books, authors, and biography subjects,
+ * as well as the functionality of the {@code Reversible} interface.
+ * </p>
+ * 
+ * @author Lucas L
+ * @author Nathan O
+ * @version 1.0 2025
+ */
 public class Main
 {
+    /**
+     * The main method initializes data related to books, authors, biographies,
+     * autobiographies, and their subjects, then displays the information and
+     * performs comparisons.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(final String[] args)
     {
         // Birth dates for book authors
@@ -396,7 +418,6 @@ public class Main
 
         // Book comparisons by publication year
         System.out.println("\n=== Book Comparisons by Publication Year ===");
-
         System.out.println("Comparing 1984 (1949) to Moby-Dick (1851):");
         System.out.println("Result: " + nineteenEightyFour.compareTo(mobyDick));
 
@@ -408,7 +429,6 @@ public class Main
 
         // Author comparisons by birth date
         System.out.println("\n=== Author Comparisons by Birth Date ===");
-
         System.out.println("Comparing George Orwell to Jane Austen:");
         System.out.println("Result: " + georgeOrwell.compareTo(janeAusten));
 
@@ -420,7 +440,6 @@ public class Main
 
         // Biography subject comparisons
         System.out.println("\n=== Biography Subject Comparisons ===");
-
         System.out.println("Comparing Einstein to Churchill:");
         System.out.println("Result: " + einstein.compareTo(churchill));
 
