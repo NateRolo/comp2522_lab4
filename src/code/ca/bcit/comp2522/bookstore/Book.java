@@ -10,7 +10,7 @@ package ca.bcit.comp2522.bookstore;
  * @author Lucas L
  * @version 1.0
  */
-public class Book implements Comparable<Object>,
+public class Book implements Comparable<Book>,
         Printable,
         Reversible
 {
@@ -116,22 +116,21 @@ public class Book implements Comparable<Object>,
      * @throws IllegalArgumentException if the object is null or not a {@code Book}
      */
     @Override
-    public int compareTo(Object o) {
-        if(o == null || !(o instanceof Book))
+    public int compareTo(Book otherBook)
+    {
+        if(otherBook == null)
         {
-            throw new IllegalArgumentException("Cannot compare the two objects");
+            throw new NullPointerException("Cannot compare the two objects");
         }
 
-        if(this == o)
+        if(this == otherBook)
         {
             return 0;
         }
 
-        final Book other;
         final int result;
 
-        other = (Book) o;
-        result = this.yearPublished - other.getYearPublished();
+        result = this.yearPublished - otherBook.yearPublished;
 
         return result;
     }

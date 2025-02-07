@@ -9,7 +9,7 @@ import java.util.Objects;
  * @author Nathan O
  * @version 1.0 2025
  */
-public class Person implements Comparable<Object>,
+public class Person implements Comparable<Person>,
                                Printable,
                                Reversible
 {
@@ -153,27 +153,17 @@ public class Person implements Comparable<Object>,
      * @return the difference in birth years between this person and the other
      */
     @Override
-    public int compareTo(final Object o)
+    public int compareTo(final Person otherPerson)
     {
-        final boolean objectIsNotAPerson;
-        final boolean thisPersonIsOlder;
         final int ageDifference;
 
-        if(o == null)
+        if(otherPerson == null)
         {
-            throw new IllegalArgumentException("Cannot compare to null object.");
-        }
-
-        objectIsNotAPerson = !(o instanceof Person);
-
-        if(objectIsNotAPerson)
-        {
-            throw new IllegalArgumentException("Cannot compare this person" +
-                                               " to non-person object.");
+            throw new NullPointerException("Cannot compare to null object.");
         }
 
         ageDifference = this.dateOfBirth.getYear() -
-                        ((Person)o).getDateOfBirth().getYear();
+                        otherPerson.dateOfBirth.getYear();
 
         return ageDifference;
     }
