@@ -109,7 +109,7 @@ public class Book implements Comparable<Book>,
      * Compares this book with another object based on the year of publication.
      * Implements the {@code Comparable} interface.
      *
-     * @param o the object to compare with
+     * @param otherBook the object to compare with
      * @return a negative integer if this book was published earlier,
      *         zero if published in the same year,
      *         or a positive integer if published later

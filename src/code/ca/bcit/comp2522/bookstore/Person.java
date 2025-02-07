@@ -149,7 +149,7 @@ public class Person implements Comparable<Person>,
     /**
      * Compares this person to another person based on birth year.
      *
-     * @param o the object to compare to
+     * @param otherPerson the object to compare to
      * @return the difference in birth years between this person and the other
      */
     @Override
